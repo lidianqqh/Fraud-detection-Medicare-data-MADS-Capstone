@@ -4,20 +4,20 @@
 ## Introduction
 In the United States, Medicare is the federal health insurance program for people ages 65 and over, regardless of income, medical history, or health status. Due to the increasing of elderly population and outbreak of infectious diseases, the Medicare expenses will be increasing more aggressively. CBO projects that between 2021 and 2032, the net Medicare spending, after subtracting premiums and other offsetting receipts, will grow as a share of both the federal budget, from 10.1% to 17.8%, and the nation’s economy, from 3.1% to 4.3% of gross domestic product (GDP) (Source: [KFF analysis of Medicare spending data from Medicare Trustees report, April 2022.](https://www.kff.org/medicare/issue-brief/what-to-know-about-medicare-spending-and-financing/#:~:text=CBO%20projects%20that%20between%202021,gross%20domestic%20product%20(GDP).)). Medicare fraud occurs when someone knowingly deceives Medicare to receive payment when they should not, or to receive higher payment than they should. The Federal Bureau of Investigation (FBI) estimates that fraud accounts for up to 10% of all billings within the Medicare program, about $65 billion in financial loss per year.(Source: [Medicare and the ACA: Shifting the paradigm of fraud detection](https://mds.marshall.edu/cgi/viewcontent.cgi?article=1171&context=mgmt_faculty)). So, there are great needs for an efficient and automatic healthcare system to detect fraud.
 
-**Our project aims to build Machine Learning models and detect the fraud providers by using Medicare data from multiple government data sources.**
+Our project aims to build Machine Learning models and detect the fraud providers by using Medicare data from multiple government data sources.
 
 
 ## Data sources
-##### The project has 3 different sources
+#### The project has 3 different sources
 - [Medicare Part B](https://data.cms.gov/provider-summary-by-type-of-service/medicare-physician-other-practitioners/medicare-physician-other-practitioners-by-provider-and-service): Providing claims information for each procedure a physician performs
 within a given year.
 - [Medicare Part B Summary by Provider data](https://data.cms.gov/provider-summary-by-type-of-service/medicare-physician-other-practitioners/medicare-physician-other-practitioners-by-provider): Describing the providers overall billing activities across all procedure codes.
 - [LEIE data for fraud labeling](https://oig.hhs.gov/exclusions/exclusions_list.asp): List of Excluded Individuals and Entities for providers, which contains the following information: reason for exclusion, date of exclusion and reinstate/waiver date for all current physicians found unsuited to practice medicine and thus excluded from practicing in the United States for a given period of time.
 
-##### The reason we selected Part B and Part B Summary by Provider data for our analysis
+#### The reason we selected Part B and Part B Summary by Provider data for our analysis
 The Part B dataset includes both provider-level and procedure-level attributes, including the amounts charged for procedures, the number of beneficiaries receiving the procedure, and the payment reimbursed by Medicare. Those information will be more helpful to building our models, as we can create summary statatistics for each providers based on the procedure-level attributes. In literature review, we searched through papers adopting CMS data sourses such as Part B, Part D and DMEPOS. There is no significant difference regarding the AUC evaluation performance among these 3 datasets.
 
-##### The limitation of labeling by LEIE database
+#### The limitation of labeling by LEIE database
 [LEIE database](https://oig.hhs.gov/exclusions/exclusions_list.asp) is updated monthly, and the current LEIE fraud labels can only reflect the current existing providers. As we were exploring the providers from 2013 to 2021, when some providers might be identified as fraud at that time, but later reinstated because the minimum extension duration was hit or the provider received a waiver. Those details can not be included in the latest LEIE data and the previously identified fraud can be gone. Due to the extremely small proportions of fraud providers, we need to expand the fraud labeling as much as possible, otherwise we will get so many false negative labels. To solve this problem, we leveraged two additional approaches:
 - An [Internet Archive tool](https://archive.org/web/) was used to download all the available monthly archived exclusions and reinstatements data from 2013 to 2023. Then, we aggregated the monthly data with the most recent updated LEIE Database and the LEIE Database archieved in December 2012, and dropped the duplicated records afterwards - This could be the most completed database including all the available fraud records from database build-up upto now.
 
