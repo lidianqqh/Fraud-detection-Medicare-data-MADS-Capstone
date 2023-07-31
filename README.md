@@ -31,7 +31,7 @@ Part B Summary by Provider data can help with addtional information for each pro
 2) To download all the available [Medicare Part B Summary by Provider data](https://data.cms.gov/provider-summary-by-type-of-service/medicare-physician-other-practitioners/medicare-physician-other-practitioners-by-provider), just click the download button and select data range from 2013 to 2021, then hit 'Download Files', the yearly Part B Summary by Provider data will be downloaded separatedly for each individual year. (Data samples can be found at data/PartB_provider folder)
 
 3) To download the archived monthly exclusion and reinstatement data from 2013 to the currrent year, we leveraged an [Internet Archive tool](https://archive.org/web/) to access the LEIE database (Source: [Data‑Centric AI for Healthcare Fraud Detection](https://link.springer.com/article/10.1007/s42979-023-01809-x)) in each historical month from Janurary 2013, and downloaded the exclusion and reinstatement files, respectively, until June 2023. (Data samples can be found at data/LEIE folder) \
-Besdies, the three cumulative LEIE database were downloaded based on below datacuts:
+In addition, the other three cumulative LEIE database were downloaded based on below datacuts:
       - [06-2023 Updated LEIE Database](https://oig.hhs.gov/exclusions/downloadables/UPDATED.csv)
       - [01-2023 Updated LEIE Database](https://web.archive.org/web/20230306062338/https://oig.hhs.gov/exclusions/downloadables/UPDATED.csv)
       - [12-2012 Updated LEIE Database](https://web.archive.org/web/20130115211318/https://oig.hhs.gov/exclusions/downloadables/updatedleie.zip)
