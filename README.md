@@ -27,7 +27,7 @@ The Part B dataset includes both provider-level and procedure-level attributes, 
 ## Downloading the Data
 1) To download all the available [Medicare Part B data](https://data.cms.gov/provider-summary-by-type-of-service/medicare-physician-other-practitioners/medicare-physician-other-practitioners-by-provider-and-service), just click the download button and select data range from 2013 to 2021, then hit 'Download Files', the yearly Part B data will be downloaded separatedly for each individual year. (Data samples can be found at data/PartB folder)
 
-2) To download all the available [Medicare Part B Summary by Provider data](https://data.cms.gov/provider-summary-by-type-of-service/medicare-physician-other-practitioners/medicare-physician-other-practitioners-by-provider), just click the download button and select data range from 2013 to 2021, then hit 'Download Files', the yearly Part B Summary by Provider data will be downloaded separatedly for each individual year. (Data samples can be found at data/PartB_Provider folder)
+2) To download all the available [Medicare Part B Summary by Provider data](https://data.cms.gov/provider-summary-by-type-of-service/medicare-physician-other-practitioners/medicare-physician-other-practitioners-by-provider), just click the download button and select data range from 2013 to 2021, then hit 'Download Files', the yearly Part B Summary by Provider data will be downloaded separatedly for each individual year. (Data samples can be found at data/PartB_provider folder)
 
 3) To download the archived monthly exclusion and reinstatement data from 2013 to the currrent year, we leveraged an [Internet Archive tool](https://archive.org/web/) to access the LEIE database (Source: [Data‑Centric AI for Healthcare Fraud Detection](https://link.springer.com/article/10.1007/s42979-023-01809-x)) in each historical month from Janurary 2013, and downloaded the exclusion and reinstatement files, respectively, until June 2023. (Data samples can be found at data/LEIE folder) \
 Besdies, the three cumulative LEIE database were downloaded based on below datacuts:
@@ -37,8 +37,8 @@ Besdies, the three cumulative LEIE database were downloaded based on below datac
 
 ## Intermediate datasets:
 Note: All the full datasets can be downloaded at this [Google Drive](https://drive.google.com/drive/folders/1HxvleTx326J3vMswHrBULi_Bc_Ul03uh).
-- all_exclusion_providers_from_2013_to_2023.csv: The exclusion data from 2013 Jan to 2023 June combined from historical monthly dataset (Sample dataset located at folder data/LEIE) - please find the **notebook 1.1** for this step at preprocessing folder.
-- all_reinstate_providers_from_2013_to_2023.csv: The reinstatement data from 2013 Jan to 2023 June combined from historical monthly dataset (Sample dataset located at folder data/LEIE) - please find the **notebook 1.2** for this step at preprocessing folder.
+- all_exclusion_providers_from_2013_to_2023.csv: The exclusion data from 2013 Jan to 2023 June combined from historical monthly dataset (located at folder data/LEIE/all_exclu_from_2013) - please find the **notebook 1.1** for this step at preprocessing folder.
+- all_reinstate_providers_from_2013_to_2023.csv: The reinstatement data from 2013 Jan to 2023 June combined from historical monthly dataset (located at folder data/LEIE/all_rein_from_2013) - please find the **notebook 1.2** for this step at preprocessing folder.
 - year2013_to_2023_combined_with_labels.csv: The final cleaned dataset after joining all datasets for labeling the fraudulent providers. (Sample dataset located at folder data) - please find the **notebook 1.3** for this step at preprocessing folder. 
 - year2013_2014_combined_with_labels.csv: the subset of year2013_to_2023_combined_with_labels.csv for calendar years 2013 and 2014. (Sample dataset located at folder data) - - please find the **notebook 1.3** for this step at preprocessing folder.
 
