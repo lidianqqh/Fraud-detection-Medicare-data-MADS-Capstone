@@ -41,7 +41,7 @@ Note: All the intermediate datasets in full size can be downloaded at this [Goog
 - all_exclusion_providers_from_2013_to_2023.csv: The exclusion data from 2013 Jan to 2023 June combined from historical monthly dataset (located at folder data/LEIE/all_exclu_from_2013) - please find the **notebook 1.1** for this step at preprocessing folder.
 - all_reinstate_providers_from_2013_to_2023.csv: The reinstatement data from 2013 Jan to 2023 June combined from historical monthly dataset (located at folder data/LEIE/all_rein_from_2013) - please find the **notebook 1.2** for this step at preprocessing folder.
 - year2013_to_2023_combined_with_labels.csv: The final cleaned dataset after joining all datasets for labeling the fraudulent providers. (Sample dataset located at folder data) - please find the **notebook 1.3** for this step at preprocessing folder. 
-- year2013_2014_combined_with_labels.csv: the subset of year2013_to_2023_combined_with_labels.csv for calendar years 2013 and 2014. (Sample dataset located at folder data) - - please find the **notebook 1.3** for this step at preprocessing folder.
+- year2013_2014_combined_with_labels.csv: the subset of year2013_to_2023_combined_with_labels.csv for calendar years 2013 and 2014, which will be used as the input data for all the downstream unsupervised and supervised learning approaches (Sample dataset located at folder data) - - please find the **notebook 1.3** for this step at preprocessing folder.
 
 
 ## Model Requirements and Installation
@@ -51,4 +51,21 @@ Prior to running the model please install and set up the project dependencies wi
 pip install -r requirements.txt
 ```
 
-## Modeling and Evaluation
+## Unsupervised Learning
+
+To exploring the patterns of the fraud labels, we built a 3D rendering of the Medicare data with the fraud labels embedded in the whole population displayed in the high dimensional spaces.
+![3d_sphere1.png](assets/3d_sphere1.png)
+
+Two dimensionality reduction pipelines were built to be applied to the enriched Part B dataset with 89 features included.(find script at unsupervised_learning/Unsupervised_learning_components_extraction.ipynb)
+
+   - Truncated SVD: Working with a sparse matrix in place of a dense numpy matrix which can sometimes cause out-of-memory issues depending on the machine where the code is running.
+
+   - Incremental PCA: Designed to iterate over a dataset and fits a PCA model over mini subsets of the whole dataset. This allows for large datasets to be fed to the model and not cause an out-of-memory error.
+
+A data-viz pipeline was built to illustrate the details about the explained variance of each component individually and the model as a whole. 
+![explained_variance_for_3_components.JPG](assets/explained_variance_for_3_components.JPG)
+Additionally, a pipeline was built for automating the whole process of finding the optimal K for a K-Means cluster model.(find script at unsupervised_learning/auto_K_finder.ipynb)
+
+With the dimensionality reduction by SVD and PCA with 3 components, we are able to capture 99\% of the variance from the original dataset.The original dataset has 80+ numerical features. By distilling the original dataset down to 3 components and keeping so much of the information from the whole dataset, we should see a huge increase in speed for the downstream supervised learning models training and optimization.
+
+## Supervised Learning
