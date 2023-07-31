@@ -53,7 +53,7 @@ pip install -r requirements.txt
 
 ## Unsupervised Learning
 
-To exploring the data patterns, we built a 3D rendering of the Medicare data with the fraud labels ("1" with red dot) embedded in the whole population displayed in the high dimensional spaces.
+To exploring the data patterns, we built a 3D rendering of the Medicare data with the fraud labels ("1") embedded in the whole population displayed in the high dimensional spaces.
 ![3d_sphere1.png](assets/3d_sphere1.png)
 
 Two dimensionality reduction pipelines were built to be applied to the enriched Part B dataset with 89 features included.(find script at unsupervised_learning/Unsupervised_learning_components_extraction.ipynb)
