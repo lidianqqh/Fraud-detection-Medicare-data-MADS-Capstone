@@ -72,7 +72,7 @@ With the dimensionality reduction by SVD and PCA with 3 components, we are able 
 ### Exploration of over/down-sampling techniques to deal with unbalanced labels
 Logistic regression was used as a baseline model to explore the best ratio of oversampling or oversampling or hybrid sampling approaches.(please find the notebook 2.1, 2.2, 2.3 and 2.4 under the supervised-learning folder for details)
 ![evaluation_score_for_resampling_ratios_exploration.png](assets/evaluation_score_for_resampling_ratios_exploration.png)
-From the above table, we observed that undersampling could delivery more promising roc-auc scores with the default setting of a logistic regression model, which are equivalent or better than the scores captured by modeling on data without any resampling techniques, and it can help speedup the training and optimization process, given our huge dimensional spaces with about 90 features and 2 million instances.\
+From the above table, we observed that undersampling could delivery more promising roc-auc scores with the default setting of a logistic regression model, which are equivalent or better than the scores captured by modeling on data without any resampling techniques, and it can help speedup the training and optimization process, given our huge dimensional spaces with about 90 features and 2 million instances.
 
 In addition, dimensionality reduction algorithms such as Truncated SVD and MiniBatch PCA can speedup the downstream supervised learning approach, but they are not preferable due to the mediocre evaluation scores and lack of models explanation capability.
 
@@ -80,4 +80,4 @@ In addition, dimensionality reduction algorithms such as Truncated SVD and MiniB
 Based on the exploration results, we determined applying downsampling technique with 4 different minority/majority label ratios (1:10, 1:4, 1:2 and 1:1), we would select Logistic Regression, Random Forest and Xgboost with our enriched Part B datasets, which has 80+ numerical features and is expected to deliver better evaluation results. (please find the notebook 3.1, 4.1 and 5.1 under the supervised-learning folder)
 ![Confusion_matrix_between_models.png](assets/Confusion_matrix_between_models.png)
 ## Feature Contributions
-To explore the features having the most contributions and improve the model explanations, we leveraged [SHAP (SHapley Additive exPlanations)](https://shap.readthedocs.io/en/latest/) technique and used the average SHAP value to visualize the top 10 features for the enriched Part B dataset with implementing a Xgboost model.
+To explore the features having the most contributions and improve the model explanations, we leveraged [SHAP (SHapley Additive exPlanations)](https://shap.readthedocs.io/en/latest/) technique and used the average SHAP value to visualize the top 10 features for the enriched Part B dataset with implementing a Xgboost model. (please find the script in notebook 8.1 under the supervised-learning folder)
