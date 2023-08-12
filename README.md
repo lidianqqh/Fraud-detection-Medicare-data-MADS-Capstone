@@ -79,7 +79,6 @@ In addition, dimensionality reduction algorithms such as Truncated SVD and MiniB
 ### Classifiers selection and models tuning
 Based on the exploration results, we determined applying downsampling technique with 4 different minority/majority label ratios (1:10, 1:4, 1:2 and 1:1), we would select Logistic Regression, Random Forest, Xgboost and LightGBM with our enriched Part B datasets, which has 80+ numerical features and is expected to deliver better evaluation results. (please find the notebook 3.1, 4.1 and 5.1 under the supervised-learning folder)
 ![Confusion_matrix_between_models.png](assets/Confusion_matrix_between_models.png)
-![Best_model_lightGBM.png](assets/Best_model_lightGBM.png)
 ## Feature Contributions
 To explore the features having the most contributions and improve the model explanations, we leveraged [SHAP (SHapley Additive exPlanations)](https://shap.readthedocs.io/en/latest/) technique and used the average SHAP value to visualize the top 15 features for the enriched Part B dataset with implementing a LightGBM model. (please find the script in notebook 8.2 under the supervised-learning folder)
 ![SHAP_Feature_Importance_by_LightGBM_Classifier.png](assets/SHAP_Feature_Importance_by_LightGBM_Classifier.png)
