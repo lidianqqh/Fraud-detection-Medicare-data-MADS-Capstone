@@ -1,0 +1,19 @@
+lgbm_pipe1: LightGBM model with downsampling class ratio 10:1
+lgbm_pipe2: LightGBM model with downsampling class ratio 4:1
+lgbm_pipe3: LightGBM model with downsampling class ratio 2:1
+lgbm_pipe4: LightGBM model with downsampling class ratio 1:1
+
+lgr_pipe1: Logistic Regression model with downsampling class ratio 10:1
+lgr_pipe2: Logistic Regression model with downsampling class ratio 4:1
+lgr_pipe3: Logistic Regression model with downsampling class ratio 2:1
+lgr_pipe4: Logistic Regression model with downsampling class ratio 1:1
+
+rf_pipe1: Random Forest model with downsampling class ratio 10:1
+rf_pipe2: Random Forest model with downsampling class ratio 4:1
+rf_pipe3: Random Forest model with downsampling class ratio 2:1
+rf_pipe4: Random Forest model with downsampling class ratio 1:1
+
+xgb_pipe1: XGBoost model with downsampling class ratio 10:1
+xgb_pipe2: XGBoost model with downsampling class ratio 4:1
+xgb_pipe3: XGBoost model with downsampling class ratio 2:1
+xgb_pipe4: XGBoost model with downsampling class ratio 1:1
