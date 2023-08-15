@@ -1,7 +1,7 @@
 # Fraud Providers Detection with Medicare data
 ![fraud-detection2.JPG](assets/fraud-detection2.JPG)
 
-**Contributer:** 
+**Contributor:** 
 - Dian Li (dianli@umich.edu)
 - Rishi Dubey (dubeyr@umich.edu) 
 - Skyler Young (skyyy@umich.edu) 
