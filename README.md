@@ -90,5 +90,5 @@ All the models were saved under the ~\models folder.
 ## Feature Contributions
 To explore the features having the most contributions and improve the model explanations, we leveraged [SHAP (SHapley Additive exPlanations)](https://shap.readthedocs.io/en/latest/) technique and used the average SHAP value to visualize the top 15 features for the enriched Part B dataset with implementing a LightGBM model. (please find the script in [notebook 8.2](supervised-learning/8.2_Model_evaluation_visualization_with_LightGBM.ipynb) under the supervised-learning folder)
 ![SHAP_Feature_Importance_by_LightGBM_Classifier.png](assets/SHAP_Feature_Importance_by_LightGBM_Classifier.png)
-![feature_importance_LightGBM_feature value.png](assets/feature_importance_LightGBM_feature value.png)
+![feature_importance_LightGBM_feature_value.png](assets/feature_importance_LightGBM_feature_value.png)
 ![SHAP_Force_plot_example_visualize.png](assets/SHAP_Force_plot_example_visualize.png)
