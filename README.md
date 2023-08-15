@@ -85,10 +85,13 @@ In addition, dimensionality reduction algorithms such as Truncated SVD and MiniB
 Based on the exploration results, we determined applying downsampling technique with 4 different class ratios (10:1, 4:1, 2:1 and 1:1), we would select Logistic Regression, Random Forest, Xgboost and LightGBM with our enriched Part B datasets, which has 80+ numerical features and is expected to deliver better evaluation results. (please find the notebook [3.1](supervised-learning/3.1_undersampling_Logistic_Regression-tuned_PartB_enriched.ipynb), [4.1](supervised-learning/4.1_undersampling_RandomForest_PartB_enriched.ipynb), [5.1](supervised-learning/5.1_undersampling_Xgboost_PartB_enriched.ipynb) and [6.1](supervised-learning/6.1_undersampling_LightGBM_PartB_enriched.ipynb) under the supervised-learning folder) \
 All the models were saved under the ~\models folder.
 ![model_comparison_results2.png](assets/model_comparison_results2.png)
+Please see [notebook 9.1](supervised-learning/9.1_Model_evaluation_visualization_violin_plot.ipynb) for reference.
+
 ![combined_confusion_matrix.png](assets/combined_confusion_matrix.png)
+Please see [notebook 8.2.0](supervised-learning/8.2.0_Model_evaluation_visualization_Logistic regression.ipynb), [8.2.1](supervised-learning/8.2.1_Model_evaluation_visualization_Random_Forest.ipynb), [8.2.2](supervised-learning/8.2.2_Model_evaluation_visualization_XgBoost.ipynb) and [8.2.3](supervised-learning/8.2.3_Model_evaluation_visualization_with_LightGBM.ipynb) for reference.
 
 ## Feature Contributions
-To explore the features having the most contributions and improve the model explanations, we leveraged [SHAP (SHapley Additive exPlanations)](https://shap.readthedocs.io/en/latest/) technique and used the average SHAP value to visualize the top 15 features for the enriched Part B dataset with implementing a LightGBM model. (please find the script in [notebook 8.2](supervised-learning/8.2_Model_evaluation_visualization_with_LightGBM.ipynb) under the supervised-learning folder)
+To explore the features having the most contributions and improve the model explanations, we leveraged [SHAP (SHapley Additive exPlanations)](https://shap.readthedocs.io/en/latest/) technique and used the average SHAP value to visualize the top 15 features for the enriched Part B dataset with implementing a LightGBM model. (please find the script in [notebook 8.1](supervised-learning/8.1_Model_evaluation_visualization_with_LightGBM.ipynb) under the supervised-learning folder)
 ![SHAP_Feature_Importance_by_LightGBM_Classifier.png](assets/SHAP_Feature_Importance_by_LightGBM_Classifier.png)
 ![feature_importance_LightGBM_feature_value.png](assets/feature_importance_LightGBM_feature_value.png)
 ![SHAP_Force_plot_example_visualize.png](assets/SHAP_Force_plot_example_visualize.png)
