@@ -88,7 +88,7 @@ All the models were saved under the ~\models folder.
 Please see [notebook 9.1](supervised-learning/9.1_Model_evaluation_visualization_violin_plot.ipynb) for reference.
 
 ![combined_confusion_matrix.png](assets/combined_confusion_matrix.png)
-Please find the notebooks [8.2.0](supervised-learning/8.2.0_Model_evaluation_visualization_Logistic regression.ipynb), [8.2.1](supervised-learning/8.2.1_Model_evaluation_visualization_Random_Forest.ipynb), [8.2.2](supervised-learning/8.2.2_Model_evaluation_visualization_XgBoost.ipynb) and [8.2.3](supervised-learning/8.2.3_Model_evaluation_visualization_with_LightGBM.ipynb) for reference.
+Please find the notebooks [8.2.0](supervised-learning/8.2.0_Model_evaluation_visualization_Logistic_regression.ipynb), [8.2.1](supervised-learning/8.2.1_Model_evaluation_visualization_Random_Forest.ipynb), [8.2.2](supervised-learning/8.2.2_Model_evaluation_visualization_XgBoost.ipynb) and [8.2.3](supervised-learning/8.2.3_Model_evaluation_visualization_with_LightGBM.ipynb) for reference.
 
 ## Feature Contributions
 To explore the features having the most contributions and improve the model explanations, we leveraged [SHAP (SHapley Additive exPlanations)](https://shap.readthedocs.io/en/latest/) technique and used the average SHAP value to visualize the top 15 features for the enriched Part B dataset with implementing a LightGBM model. (please find the script in [notebook 8.1](supervised-learning/8.1_Model_evaluation_visualization_with_LightGBM.ipynb) under the supervised-learning folder)
