@@ -1,10 +1,10 @@
 # Fraud Providers Detection with Medicare data
 ![fraud-detection2.JPG](assets/fraud-detection2.JPG)
 
-**Contributer:** \
-- Dian Li (dianli@umich.edu) \
-- Rishi Dubey (dubeyr@umich.edu)  \
-- Skyler Young (skyyy@umich.edu)  \
+**Contributer:** 
+- Dian Li (dianli@umich.edu)
+- Rishi Dubey (dubeyr@umich.edu) 
+- Skyler Young (skyyy@umich.edu) 
 
 ## Introduction
 In the United States, Medicare is the federal health insurance program for people ages 65 and over, regardless of income, medical history, or health status. Due to the increasing of elderly population and outbreak of infectious diseases, the Medicare expenses will be increasing more aggressively. CBO projects that between 2021 and 2032, the net Medicare spending, after subtracting premiums and other offsetting receipts, will grow as a share of both the federal budget, from 10.1% to 17.8%, and the nation’s economy, from 3.1% to 4.3% of gross domestic product (GDP) (Source: [KFF analysis of Medicare spending data from Medicare Trustees report, April 2022.](https://www.kff.org/medicare/issue-brief/what-to-know-about-medicare-spending-and-financing/#:~:text=CBO%20projects%20that%20between%202021,gross%20domestic%20product%20(GDP).)). Medicare fraud occurs when someone knowingly deceives Medicare to receive payment when they should not, or to receive higher payment than they should. The Federal Bureau of Investigation (FBI) estimates that fraud accounts for up to 10% of all billings within the Medicare program, about $65 billion in financial loss per year.(Source: [Medicare and the ACA: Shifting the paradigm of fraud detection](https://mds.marshall.edu/cgi/viewcontent.cgi?article=1171&context=mgmt_faculty)). So, there are great needs for an efficient and automatic healthcare system to detect fraud.
