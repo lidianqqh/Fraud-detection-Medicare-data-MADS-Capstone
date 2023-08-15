@@ -58,7 +58,7 @@ pip install -r requirements.txt
 
 ## Unsupervised Learning
 
-To exploring the data patterns, we built a 3D rendering of the Medicare data with the fraud labels ("1") embedded in the whole population displayed in the high dimensional spaces.
+To exploring the data patterns, we built a 3D rendering of the Medicare data with the fraud labels ("1") embedded in the whole population displayed in the high dimensional spaces. From the plot we can see the fraud labels are spread evenly across the population
 ![3d_visuals.png](assets/3d_visuals.png)
 
 Two dimensionality reduction pipelines were built to be applied to the enriched Part B dataset with 89 features included.(please find the [notebook](unsupervised_learning/Unsupervised_learning_components_extraction.ipynb) at folder unsupervised_learning)
@@ -90,4 +90,5 @@ All the models were saved under the ~\models folder.
 ## Feature Contributions
 To explore the features having the most contributions and improve the model explanations, we leveraged [SHAP (SHapley Additive exPlanations)](https://shap.readthedocs.io/en/latest/) technique and used the average SHAP value to visualize the top 15 features for the enriched Part B dataset with implementing a LightGBM model. (please find the script in [notebook 8.2](supervised-learning/8.2_Model_evaluation_visualization_with_LightGBM.ipynb) under the supervised-learning folder)
 ![SHAP_Feature_Importance_by_LightGBM_Classifier.png](assets/SHAP_Feature_Importance_by_LightGBM_Classifier.png)
+![feature_importance_LightGBM_feature value.png](assets/feature_importance_LightGBM_feature value.png)
 ![SHAP_Force_plot_example_visualize.png](assets/SHAP_Force_plot_example_visualize.png)
