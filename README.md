@@ -59,7 +59,7 @@ pip install -r requirements.txt
 ## Unsupervised Learning
 
 To exploring the data patterns, we built a 3D rendering of the Medicare data with the fraud labels ("1") embedded in the whole population displayed in the high dimensional spaces.
-![3d_sphere1.png](assets/3d_sphere1.png)
+![3d_visuals.png](assets/3d_visuals.png)
 
 Two dimensionality reduction pipelines were built to be applied to the enriched Part B dataset with 89 features included.(please find the [notebook](unsupervised_learning/Unsupervised_learning_components_extraction.ipynb) at folder unsupervised_learning)
 
@@ -76,7 +76,7 @@ With the dimensionality reduction by SVD and PCA with 3 components, we are able 
 ## Supervised Learning
 ### Exploration of over/down-sampling techniques to deal with unbalanced labels
 Logistic regression was used as a baseline model to explore the best ratio of oversampling or oversampling or hybrid sampling approaches.(please find the notebook [2.1](supervised-learning/2.1_rebalancing_labels_LogisticReg_PartB_original.ipynb), [2.2](supervised-learning/2.2_rebalancing_labels_LogisticReg_PartB_enriched.ipynb), [2.3](supervised-learning/2.3_rebalancing_labels_LogisticReg_PartB_enriched_TruncatedSVD.ipynb) and [2.4](supervised-learning/2.4_rebalancing_labels_LogisticReg_PartB_enriched_MiniBatchPCA.ipynb) under the supervised-learning folder for details)
-![evaluation_score_for_resampling_ratios_exploration.png](assets/evaluation_score_for_resampling_ratios_exploration.png)
+![multiple_input_comparison_lgreg.png](assets/multiple_input_comparison_lgreg.png)
 From the above table, we observed that undersampling could delivery more promising roc-auc scores with the default setting of a logistic regression model, which are equivalent or better than the scores captured by modeling on data without any resampling techniques, and it can help speedup the training and optimization process, given our huge dimensional spaces with about 90 features and 2 million instances.
 
 In addition, dimensionality reduction algorithms such as Truncated SVD and MiniBatch PCA can speedup the downstream supervised learning approach, but they are not preferable due to the mediocre evaluation scores and lack of models explanation capability.
@@ -84,7 +84,9 @@ In addition, dimensionality reduction algorithms such as Truncated SVD and MiniB
 ### Classifiers selection and models tuning
 Based on the exploration results, we determined applying downsampling technique with 4 different minority/majority label ratios (1:10, 1:4, 1:2 and 1:1), we would select Logistic Regression, Random Forest, Xgboost and LightGBM with our enriched Part B datasets, which has 80+ numerical features and is expected to deliver better evaluation results. (please find the notebook [3.1](supervised-learning/3.1_undersampling_Logistic_Regression-tuned_PartB_enriched.ipynb), [4.1](supervised-learning/4.1_undersampling_RandomForest_PartB_enriched.ipynb), [5.1](supervised-learning/5.1_undersampling_Xgboost_PartB_enriched.ipynb) and [6.1](supervised-learning/6.1_undersampling_LightGBM_PartB_enriched.ipynb) under the supervised-learning folder) \
 All the models were saved under the ~\models folder.
-![Confusion_matrix_between_models.png](assets/Confusion_matrix_between_models.png)
+![model_comparison_results2.png](assets/model_comparison_results2.png)
+![combined_confusion_matrix.png](assets/combined_confusion_matrix.png)
+
 ## Feature Contributions
 To explore the features having the most contributions and improve the model explanations, we leveraged [SHAP (SHapley Additive exPlanations)](https://shap.readthedocs.io/en/latest/) technique and used the average SHAP value to visualize the top 15 features for the enriched Part B dataset with implementing a LightGBM model. (please find the script in [notebook 8.2](supervised-learning/8.2_Model_evaluation_visualization_with_LightGBM.ipynb) under the supervised-learning folder)
 ![SHAP_Feature_Importance_by_LightGBM_Classifier.png](assets/SHAP_Feature_Importance_by_LightGBM_Classifier.png)
